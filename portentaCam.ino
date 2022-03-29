@@ -14,7 +14,7 @@ Vision not yet verified
 #include <stdio.h>
 
 #include "Arduino.h"
-#include "RPC.h"
+#include "RPC_internal.h"
 using namespace rtos;
 
 #include <stdint.h>
@@ -69,7 +69,7 @@ const long calibration = 500;    //Rotation offset
 //-------------------------------------------//
 void setup(){
   bootM4();
-  RPC.begin(); 
+  RPC1.begin(); 
   Serial.begin(baud); //Begin serial communication aka discussion through usb
   Serial.println("Serial Coms started. RPC starting...");
   pin_init();       //Initialise the pin modes, initial values and interrupts
